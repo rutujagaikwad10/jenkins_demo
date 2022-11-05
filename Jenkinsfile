@@ -1,21 +1,21 @@
 pipeline {
   agent any
   stages {
-    stages('Compile') {
+    stage('Compile') {
       steps {
           echo 'compiling c program...'
           sh 'gcc main.c add.c -o final'
       }
     }
     
-    stages('Execute') {
+    stage('Execute') {
       steps {
           echo 'executing program...'
           sh './final'
       }
     }
     
-    stages('Deploy') {
+    stage('Deploy') {
       steps {
           echo 'deploying...'
       }
